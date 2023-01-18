@@ -5,7 +5,7 @@ resource "aws_lb" "mywebapp-alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.mywebappsg.id]
-  subnets            = [aws_subnet.pub-subnet-one.id, aws_subnet.pub-subnet-two.id]
+  subnets            = [aws_subnet.public-subnet-1.id, aws_subnet.public-subnet-2.id]
 }
 
 resource "aws_lb_target_group" "mywebapp-alb-tg" {
