@@ -5,7 +5,7 @@ resource "aws_instance" "mywebappinstance1" {
   count                       = 1
   key_name                    = "webappinstancekey"
   vpc_security_group_ids      = [aws_security_group.mywebappsg.id]
-  subnet_id                   = aws_subnet.mywebappinstance.id
+  subnet_id                   = aws_subnet.public-subnet-1.id
   associate_public_ip_address = true
   user_data                   = file("data.sh")
 
@@ -21,7 +21,7 @@ resource "aws_instance" "mywebappinstance2" {
   count                       = 1
   key_name                    = "webappinstancekey"
   vpc_security_group_ids      = [aws_security_group.mywebappsg.id]
-  subnet_id                   = aws_subnet.mywebappinstance.id
+  subnet_id                   = aws_subnet.public-subnet-2.id
   associate_public_ip_address = true
   user_data                   = file("data.sh")
 
